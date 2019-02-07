@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(174, 243, 220);
+   
+    margin: 0%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, minmax(30px, auto));
+    grid-template-areas:
+     "header header header header header";
+}
+
+header{
+    align-items: center;
+    display:flex;
+    grid-area: header;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+header nav{
+    display: none;
+}
+/* aplica o stilo no primeiro filho da <nav> a se o primeiro nao for a ele nao pega nada */
+header nav a:nth-child(1){
+    font-size: 18pt;
+    color: rgb(233, 13, 97);
+    
+}
+
+header nav a{
+    text-decoration: none;
+
+
+}
+
+h3{
+    color: rgb(231, 20, 66);
+}
+
+.menu-hamburguer{
+    /* para ter um alinhamento perfeito usar todos abaixo menos cursor e width */
+    /* align alinha  vertical */
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    /* justify alinha horizontal */
+    justify-content: center;
+    width: 30px;
+}
+
+.traco{
+    background-color: black;
+    height: 3px;
+    margin: 1.5px 0;
+    width: 100%;
+
+}
+
+@media(min-width: 900px){
+     header nav{
+        display: block;
+    }
+    .menu-hamburguer{
+        display: none;
+    }
+}
+
